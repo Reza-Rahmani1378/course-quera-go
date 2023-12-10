@@ -5,6 +5,7 @@ import (
 	_ "math"
 )
 
+// Grouping Variables
 var (
 	name      string
 	age       int
@@ -22,8 +23,7 @@ func main() {
 	num1 = 2
 	num2 = 3
 
-	_res := num1 + num2
-
+	_ = num1 + num2 // Blank Identifier
 	name = "Reza"
 
 	fmt.Printf("name is : %v", name)
