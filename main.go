@@ -2,15 +2,37 @@ package main
 
 import (
 	"fmt"
-	"math"
+	_ "math"
+)
+
+var (
+	name      string
+	age       int
+	isStudent bool
 )
 
 func main() {
-	fmt.Print("Hello World.")
+	var i int
+	var fl float64
+	var s string
+	var b bool
 
-	x := 12.3353
-	var y float32 = float32(math.Floor(x*100) / 100)
+	var num1, num2 int
 
-	fmt.Println(y)
+	num1 = 2
+	num2 = 3
 
+	_res := num1 + num2
+
+	name = "Reza"
+
+	fmt.Printf("name is : %v", name)
+	fmt.Printf("age is : %v", age)
+	fmt.Printf("student is : %v", isStudent)
+
+	fmt.Printf("Zero Value for : \n"+
+		"\tint -> %v\n"+
+		"\tfloat64 -> %v\n"+
+		"\tstring -> %v\n"+
+		"\tbool -> %v\n", i, fl, s, b)
 }

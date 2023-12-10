@@ -1,1 +1,1 @@
-# course-quera-go
+# Learn Go in Course Quera
