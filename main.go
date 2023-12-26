@@ -35,4 +35,21 @@ func main() {
 		"\tfloat64 -> %v\n"+
 		"\tstring -> %v\n"+
 		"\tbool -> %v\n", i, fl, s, b)
+
+	fmt.Print("Enter input:")
+	x := input([]int{}, nil)
+	fmt.Println("Input:", x)
+}
+
+func input(x []int, err error) []int {
+	if err != nil {
+		return x
+	}
+	var d int
+	n, err := fmt.Scan(&d)
+	fmt.Print("n", n)
+	if n == 1 {
+		x = append(x, d)
+	}
+	return input(x, err)
 }

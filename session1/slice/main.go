@@ -75,14 +75,16 @@ func main() {
 		    twice the current capacity is allocated and the elements are copied there.
 	*/
 
-	metals := []string{"gold", "silver"}
+	// test := []string{}
+	metals := make([]string, 0)
+	/* metals := []string{"gold", "silver"} */
 	fmt.Printf("len : %d , cap : %d\n", len(metals), cap(metals))
 
 	/* Output :
 	   len : 2 , cap : 2
 	*/
 
-	metals = append(metals, "iron")
+	metals = append(metals, "iron", "test", "reza", "rahmani", "rezzzzz")
 	fmt.Printf("len : %d , cap : %d\n", len(metals), cap(metals))
 	/* Output :
 	   len : 3 , cap : 4
