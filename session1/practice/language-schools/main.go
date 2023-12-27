@@ -9,10 +9,12 @@ func main() {
 	// var averages[n] float32
 	// averages := make([]float32 , number)
 
+	fmt.Print(names)
 	for i := 0; i < len(names); i++ {
-		if names[i] == "" {
+		/* if names[i] == "" {
 			fmt.Println("Yes")
-		}
+		} */
+
 	}
 
 	for _, element := range names {
