@@ -10,7 +10,7 @@ import (
 
 func main() {
 	var number int
-	fmt.Scanf("%d", &number)
+	fmt.Scan(&number)
 
 	results := make([][]string, number)
 	for i := range results {
@@ -20,18 +20,12 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	for i := 0; i < number; i++ {
-		var name string
-		fmt.Scanln(&name)
-		// fmt.Println("terminal name")
-		scores, _ := reader.ReadString('\n')
-		// fmt.Println("Terminal Line")
-		score := strings.Split(scores, " ")
-		for _, el := range score {
-			fmt.Println("Score is :", el)
-		}
-		responeAverage := average(score)
 
-		fmt.Println("Respone Average :", responeAverage)
+		name, _ := reader.ReadString('\n')
+		name = strings.TrimSuffix(name, "\n")
+		scores, _ := reader.ReadString('\n')
+		score := strings.Split(scores, " ")
+		responeAverage := average(score)
 
 		results[i][0] = name
 		results[i][1] = calculateScore(responeAverage)
@@ -62,16 +56,12 @@ func calculateScore(number float64) string {
 func average(numbers []string) float64 {
 
 	var sum float64 = 0
-	for _, element := range numbers {
-		f, _ := strconv.ParseFloat(element, 64)
+	for i := 0; i < len(numbers)-1; i++ {
+		f, _ := strconv.ParseFloat(numbers[i], 64)
 		sum += f
 	}
-	fmt.Println("last element is :", numbers[len(numbers)-1])
-	lastElement := numbers[len(numbers)-1]
-	fmt.Println("Last Element is :", lastElement)
-	lastIndex, _ := strconv.ParseFloat(lastElement, 64)
-	sum += float64(lastElement)
-	fmt.Println("Sum is :", sum)
-	fmt.Println("Len is :", len(numbers))
+	lastElement := strings.TrimSuffix(numbers[len(numbers)-1], "\n")
+	lastIndex, _ := strconv.ParseFloat(lastElement, 32)
+	sum += float64(lastIndex)
 	return (float64(sum)) / (float64(len(numbers)))
 }
